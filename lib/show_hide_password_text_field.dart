@@ -54,9 +54,4 @@ class ShowHidePasswordTextFieldState extends State<ShowHidePasswordTextField> {
       ),
     );
   }
-
-  @override
-  void initState() {
-    super.initState();
-  }
 }
