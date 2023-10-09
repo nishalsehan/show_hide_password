@@ -1,6 +1,6 @@
 # show_hide_password
 
-A Flutter plugin that provides a builder to easily implement a hide/show password functionality in your Flutter application. This plugin allows you to toggle the visibility of a password field with a simple boolean status. Additionally, it includes q Flutter Widget that provides a custom textfield widget with a built-in password toggle feature and customization options.
+A Flutter plugin that provides a builder to easily implement a hide/show password functionality in your Flutter application. This plugin allows you to toggle the visibility of a password field with a simple boolean status. Additionally, it includes a Flutter Widget that provides a custom textfield widget with a built-in password toggle feature and customization options.
 
 ![demo](https://github.com/nishalsehan/show_hide_password/assets/44578204/1df70499-f43c-4ee6-b279-d21e3c97b31b)
 
@@ -14,7 +14,7 @@ A Flutter plugin that provides a builder to easily implement a hide/show passwor
 
 - Toggle between hiding and showing the password in a text field.
 - You can customize the icon and size of the password visibility toggle.
-- Supports custom `TextField` and `TextFormFields`.
+- Supports for custom `TextField`, `TextFormField` or custom widgets.
 - Provides a custom `TextField` with a built-in show/hide toggle.
 - Can customize the appearance of the textfield and password toggle to match your app's design.
 
@@ -51,7 +51,7 @@ ShowHidePassword(
 )
 ```
 
-You can customize the toogle and provide initial toggle boolean state. Here's an example of how to customize the textfield's appearance:
+You can customize the toogle and provide initial toggle boolean state. Here's an example of how to customize the toggle appearance:
 
 ```dart
 ShowHidePassword(
