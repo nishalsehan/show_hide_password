@@ -1,39 +1,84 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Hide/Show Password
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A Flutter plugin that provides a builder to easily implement a hide/show password functionality in your Flutter application. This plugin allows you to toggle the visibility of a password field with a simple boolean status. Additionally, it includes q Flutter Widget that provides a custom textfield widget with a built-in password toggle feature and customization options.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Platform Support
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+| **Android** | **iOS** | **Web** | **MacOS** | **Linux** | **Windows** |
+|:-----------:|:-------:|:-------:|:---------:|:---------:|:-----------:|
+|   &#9989;   | &#9989; | &#9989; |  &#9989;  |  &#9989;  |   &#9989;   |
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Toggle between hiding and showing the password in a text field.
+- You can customize the icon and size of the password visibility toggle.
+- Supports custom `TextField` and `TextFormFields`.
+- Provides a custom `TextField` with a built-in show/hide toggle.
+- Can customize the appearance of the textfield and password toggle to match your app's design.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this plugin, add `show_hide_password` as a dependency in your `pubspec.yaml` file.
+
+```yaml
+dependencies:
+  show_hide_password: ^0.0.1
+```
+
+Run `flutter pub` get to install the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the package in your Dart code:
 
 ```dart
-const like = 'sample';
+import 'package:show_hide_password/show_hide_password.dart';
+```
+<br/>
+
+### ShowHidePassword
+Use the `ShowHidePassword` widget in your widget tree:
+
+```dart
+ShowHidePassword(
+    passwordField: (bool hidePassword){
+      return  TextField(
+        obscureText: hidePassword, ///use the hidePassword status on obscureText to toggle the visibility
+      );
+    }
+)
 ```
 
-## Additional information
+You can customize the toogle and provide initial toggle boolean state. 
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+| Property              | Type                      | Description                                               |
+|-----------------------|---------------------------|-----------------------------------------------------------|
+| iconSize              | double                    | Size of the toggle icon                                   |  
+| hidePassword          | bool                      | Inital boolean state of the toggle                        |
+| visibleOnIcon         | IconData                  | An icon to display as the toggle when visibility ON       |
+| visibleOffIcon        | IconData                  | An icon to display as the toggle when visibility OFF      |
+
+<br/>
+
+### ShowHidePasswordTextField
+Use the `ShowHidePasswordTextField` widget in your widget tree:
+
+
+```dart
+TextEditingController controller = TextEditingController();
+```
+
+```dart
+ShowHidePasswordTextField(
+  controller: controller,
+)
+```
+
+You can customize the toogle and provide initial toggle boolean state. 
+
+| Property              | Type                      | Description                                               |
+|-----------------------|---------------------------|-----------------------------------------------------------|
+| controller            | TextEditingController     | TextEditing Controller used to control text               |  
+| hintText              | String                    | The hint text to display inside the text input field.     |
+| visibleOnIcon         | IconData                  | An icon to display as the toggle when visibility ON       |
+| visibleOffIcon        | IconData                  | An icon to display as the toggle when visibility OFF      |
