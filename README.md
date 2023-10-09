@@ -2,6 +2,8 @@
 
 A Flutter plugin that provides a builder to easily implement a hide/show password functionality in your Flutter application. This plugin allows you to toggle the visibility of a password field with a simple boolean status. Additionally, it includes q Flutter Widget that provides a custom textfield widget with a built-in password toggle feature and customization options.
 
+![demo](https://github.com/nishalsehan/show_hide_password/assets/44578204/1df70499-f43c-4ee6-b279-d21e3c97b31b)
+
 ## Platform Support
 
 | **Android** | **iOS** | **Web** | **MacOS** | **Linux** | **Windows** |
@@ -49,7 +51,54 @@ ShowHidePassword(
 )
 ```
 
-You can customize the toogle and provide initial toggle boolean state. 
+You can customize the toogle and provide initial toggle boolean state. Here's an example of how to customize the textfield's appearance:
+
+```dart
+ShowHidePassword(
+  hidePassword: false,
+  passwordField: (hidePassword){
+      return  TextField(
+        keyboardType: TextInputType.text,
+        controller: controller,
+        obscureText: hidePassword, ///use the hidePassword status on obscureText to toggle the visibility
+        showCursor: false,
+        decoration: InputDecoration(
+          isDense: true,
+          hintText: 'Enter the password',
+          hintStyle: Theme.of(context).textTheme.labelMedium!.copyWith(
+            color: Colors.black38,
+            fontWeight: FontWeight.w500,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+                color: Colors.black12,
+                width: 1
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+                color: Colors.black38,
+                width: 1
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          counterText: "",
+          contentPadding:EdgeInsets.symmetric(vertical: size.height*0.018,horizontal: size.width*0.04),
+        ),
+        style:  Theme.of(context).textTheme.labelMedium!.copyWith(
+          color: Colors.black87,
+          fontWeight: FontWeight.w500,
+        ),
+      );
+  },
+  iconSize: 18,
+  visibleOffIcon: Iconsax.eye_slash,
+  visibleOnIcon: Iconsax.eye,
+)
+```
+
+![show_hide_password_screenshot_03](https://github.com/nishalsehan/show_hide_password/assets/44578204/e0f95d4b-1b46-4f92-b869-aa24c58cb743)
 
 | Property              | Type                      | Description                                               |
 |-----------------------|---------------------------|-----------------------------------------------------------|
@@ -73,6 +122,8 @@ ShowHidePasswordTextField(
   controller: controller,
 )
 ```
+
+![show_hide_password_screenshot_01](https://github.com/nishalsehan/show_hide_password/assets/44578204/277f0406-ddeb-4f1a-bbd7-96144ccad2ed)
 
 You can customize the appearance of the textfield and password toggle using various properties. Here's an example of how to customize the textfield's appearance:
 
@@ -112,6 +163,9 @@ ShowHidePasswordTextField(
   ),
 )
 ```
+
+![show_hide_password_screenshot_02](https://github.com/nishalsehan/show_hide_password/assets/44578204/a2107808-6228-44ec-95e8-fe2f1ccfa8ba)
+
 
 | Property              | Type                      | Description                                                     |
 |-----------------------|---------------------------|-----------------------------------------------------------------|
