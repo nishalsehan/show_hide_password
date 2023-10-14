@@ -24,7 +24,7 @@ To use this plugin, add `show_hide_password` as a dependency in your `pubspec.ya
 
 ```yaml
 dependencies:
-  show_hide_password: ^0.0.1
+  show_hide_password: ^0.0.2
 ```
 
 Run `flutter pub` get to install the package.

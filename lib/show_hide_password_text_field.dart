@@ -31,16 +31,24 @@ class ShowHidePasswordTextField extends StatefulWidget {
 class ShowHidePasswordTextFieldState extends State<ShowHidePasswordTextField> {
   bool _passwordVisible = false;
 
+  /// default visibility assigned to false (password is not visible at the beginning)
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: !_passwordVisible,
+
+      /// used visibility status to show and hide the text
       controller: widget.controller,
       style: (widget.fontStyle ?? const TextStyle()).copyWith(
         color: widget.textColor ?? Colors.black87,
+
+        /// used Colors.black87 as the text color if user not assigned a text color.
       ),
       decoration: (widget.decoration ?? const InputDecoration()).copyWith(
         hintText: widget.hintText ?? 'Enter the Password',
+
+        /// used a default hint
         hintStyle: (widget.fontStyle ?? const TextStyle()).copyWith(
           color: widget.hintColor ?? Colors.black38,
         ),
@@ -54,6 +62,8 @@ class ShowHidePasswordTextFieldState extends State<ShowHidePasswordTextField> {
                 EdgeInsets.only(left: widget.iconSize, right: widget.iconSize),
             child: Icon(
                 _passwordVisible ? widget.visibleOnIcon : widget.visibleOffIcon,
+
+                /// changed the icon on toggle change
                 color: Colors.black26,
                 size: widget.iconSize),
           ),

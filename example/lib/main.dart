@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
       title: 'Show Hide Password Demo',
       debugShowCheckedModeBanner: false,
       theme:
-          ThemeData(useMaterial3: true, textTheme: GoogleFonts.latoTextTheme()),
+          ThemeData(useMaterial3: true, textTheme: GoogleFonts.latoTextTheme()
+
+              /// used google font for the text theme
+              ),
       home: const MyHomePage(title: 'Create Your Password'),
     );
   }
@@ -32,6 +35,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  /// use to handle the text editing changes
   TextEditingController controller = TextEditingController();
 
   @override
@@ -72,6 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SizedBox(
             width: size.width * 0.9,
+
+            /// default ShowHidePasswordTextField widget without any extra attributes
             child: ShowHidePasswordTextField(
               controller: controller,
             ),
@@ -81,6 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SizedBox(
             width: size.width * 0.9,
+
+            /// custom ShowHidePasswordTextField widget with different extra attributes
             child: ShowHidePasswordTextField(
               controller: controller,
               fontStyle: const TextStyle(fontSize: 14, height: 1.4),
@@ -89,6 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
               iconSize: 20,
               visibleOffIcon: Iconsax.eye_slash,
               visibleOnIcon: Iconsax.eye,
+
+              /// set the text field appearance
               decoration: InputDecoration(
                 isDense: true,
                 hintText: 'Enter the password',
@@ -112,8 +122,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SizedBox(
             width: size.width * 0.9,
+
+            /// ShowHidePassword with custom attributes
             child: ShowHidePassword(
               hidePassword: false,
+
+              /// set the default visibility status to false
               passwordField: (hidePassword) {
                 return TextField(
                   keyboardType: TextInputType.text,
@@ -151,6 +165,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               iconSize: 18,
+
+              /// set the icon size of the toggle to 18px
+              /// assigned toggle on and off icons
               visibleOffIcon: Iconsax.eye_slash,
               visibleOnIcon: Iconsax.eye,
             ),

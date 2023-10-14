@@ -1,6 +1,6 @@
 name: show_hide_password
 description: Effortlessly switch between revealing and concealing your passwords, offering convenience and enhanced security in a single click.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/nishalsehan/show_hide_password
 
 environment:
